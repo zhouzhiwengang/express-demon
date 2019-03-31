@@ -1,0 +1,12 @@
+extends ./layout.jade
+block content
+ .container
+    .row
+        each item in movies
+           .col-md-4
+             .thumbnall
+                a(href="/movie/#{item.id}")
+                    img(src="#{item.poster}",alt="#{item.title}")
+                .caption
+                    h3 #{item.title}
+                    p: a.btn.btn-primary(href="/movie/#{item.id}") 查看详情
